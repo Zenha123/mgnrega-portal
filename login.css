@@ -7,23 +7,34 @@ body.login-bg {
 .left-panel {
   background-color: #1976d2;
   color: white;
+  flex: 1;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .left-panel h3 {
   font-weight: 600;
 }
 
-.left-panel button {
-  background-color: #ffffff;
-  color: #1976d2;
-  border: none;
-  padding: 8px 20px;
-  border-radius: 4px;
-  font-weight: 500;
+.left-panel p {
+  font-size: 0.95rem;
 }
 
-.left-panel button:hover {
-  background-color: #f4f4f4;
+.logo-img {
+  height: 70px;
+}
+
+.right-panel {
+  background: #ffffff;
+  flex: 1;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .login-card h3 {
@@ -47,6 +58,17 @@ body.login-bg {
   font-size: 0.85rem;
 }
 
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .left-panel {
+    padding: 20px;
+  }
+
+  .right-panel {
+    padding: 20px;
+  }
+}
+
 @media (max-width: 768px) {
   .left-panel {
     display: none;
@@ -54,6 +76,7 @@ body.login-bg {
 
   .right-panel {
     width: 100%;
+    min-height: auto;
   }
 
   .login-card {
