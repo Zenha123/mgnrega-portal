@@ -1,0 +1,43 @@
+/* Sidebar and layout adjustments */
+#wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  width: 250px;
+  margin-left: -250px;
+  transition: margin 0.3s ease;
+}
+
+#page-content-wrapper {
+  width: 100%;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+/* Sidebar link hover effects */
+.list-group-item:hover {
+  background-color: #495057;
+}
+
+/* Active item styling (optional) */
+.list-group-item.active {
+  background-color: #0d6efd;
+  border: none;
+  color: #fff;
+}
+
+/* For mobile screens */
+@media (max-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: -250px;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+  }
+}
