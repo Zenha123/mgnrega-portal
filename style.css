@@ -284,7 +284,7 @@ canvas {
 }
 
 /* Breadcrumb styling for top navbar */
-.breadcrumb-nav {
+/*.breadcrumb-nav {
   max-width: 450px;
   white-space: nowrap;
   overflow: hidden;
@@ -303,7 +303,7 @@ canvas {
   color: #fff;
 }
 
-/* On small screens — reduce max-width so it truncates earlier */
+
 @media (max-width: 767.98px) {
   .breadcrumb-nav {
     max-width: 160px;
@@ -312,7 +312,7 @@ canvas {
 
 
 
-/* Breadcrumb truncate for smaller screens */
+
 #breadcrumb-trail {
   white-space: nowrap;
   overflow: hidden;
@@ -320,7 +320,6 @@ canvas {
   max-width: 400px;
 }
 
-/* Adjust for very small screens (hide breadcrumb on mobile) */
 @media (max-width: 991px) {
   #breadcrumb-trail {
     display: none;
@@ -401,5 +400,36 @@ canvas {
 @media (max-width: 991px) {
   #main-content {
     margin-left: 0;
+  }
+}
+
+
+/* Breadcrumb styling inside top navbar */
+.breadcrumb-nav {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 500px;
+}
+
+/* Breadcrumb separator */
+.breadcrumb {
+  --bs-breadcrumb-divider: ">";
+  margin-bottom: 0;
+}
+
+.breadcrumb-item {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+}
+
+.breadcrumb-item.active {
+  color: #fff;
+}
+
+/* On smaller screens, reduce width so it truncates earlier */
+@media (max-width: 767.98px) {
+  .breadcrumb-nav {
+    max-width: 160px;
   }
 }
