@@ -283,8 +283,8 @@ canvas {
   align-items: center;
 }
 
-/* Breadcrumb styling for top navbar */
-/*.breadcrumb-nav {
+
+.breadcrumb-nav {
   max-width: 450px;
   white-space: nowrap;
   overflow: hidden;
