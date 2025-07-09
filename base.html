@@ -38,10 +38,10 @@
         <a class="navbar-brand text-white fw-bold fs-5 me-auto" href="#">MGNREGA</a>
 
         <div class="d-flex align-items-center gap-3">
-          <a class="btn btn-outline-light position-relative p-0" style="width: 40px; height: 40px;" href="#">
-            <i class="bi bi-bell"></i>
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
-          </a>
+          <a class="btn btn-outline-light bell-btn" href="#">
+  <i class="bi bi-bell"></i>
+  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+</a>
           <div class="text-white d-flex align-items-center gap-1">
             <i class="bi bi-person-fill"></i>
             <span class="fw-semibold">Zenha</span>
@@ -55,13 +55,14 @@
     <div class="container-fluid p-4">
 
       <!-- Filters -->
-      <div class="d-flex flex-wrap gap-2 mb-4">
-        <select class="form-select w-auto"><option selected>Kerala</option></select>
-        <select class="form-select w-auto"><option selected>Kannur</option></select>
-        <select class="form-select w-auto"><option selected>Thalassery</option></select>
-        <select class="form-select w-auto"><option selected>Panchayat A</option></select>
-        <button class="btn btn-primary">Filter</button>
-      </div>
+     <!-- Filters -->
+<div class="filters-grid mb-4">
+  <select class="form-select"><option selected>Kerala</option></select>
+  <select class="form-select"><option selected>Kannur</option></select>
+  <select class="form-select"><option selected>Thalassery</option></select>
+  <select class="form-select"><option selected>Panchayat A</option></select>
+  <button class="btn btn-primary w-100 w-md-auto">Filter</button>
+</div>
 
       <!-- Dashboard Cards -->
       <div class="row g-3 mb-4">
