@@ -135,3 +135,10 @@ canvas {
   font-weight: 600;
   margin-right: 10px;
 }
+@media (max-width: 575.98px) {
+  .navbar .navbar-brand {
+    font-size: 1rem !important;
+     font-weight: 600;
+    margin-right: 10px;
+  }
+}
