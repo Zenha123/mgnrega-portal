@@ -284,47 +284,39 @@ canvas {
 }
 
 
+
+
+/* Breadcrumb styling inside top navbar */
 .breadcrumb-nav {
-  max-width: 450px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  max-width: 500px;
+  flex-shrink: 1;
 }
 
+/* Breadcrumb separator */
 .breadcrumb {
   --bs-breadcrumb-divider: ">";
+  margin-bottom: 0;
 }
 
 .breadcrumb-item {
   color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
 }
 
 .breadcrumb-item.active {
   color: #fff;
 }
 
-
+/* On smaller screens, reduce width so it truncates earlier */
 @media (max-width: 767.98px) {
   .breadcrumb-nav {
     max-width: 160px;
   }
 }
 
-
-
-
-#breadcrumb-trail {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 400px;
-}
-
-@media (max-width: 991px) {
-  #breadcrumb-trail {
-    display: none;
-  }
-}
 
 /*/
 #sidebar {
@@ -404,32 +396,3 @@ canvas {
 }
 
 
-/* Breadcrumb styling inside top navbar */
-.breadcrumb-nav {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 500px;
-}
-
-/* Breadcrumb separator */
-.breadcrumb {
-  --bs-breadcrumb-divider: ">";
-  margin-bottom: 0;
-}
-
-.breadcrumb-item {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.9rem;
-}
-
-.breadcrumb-item.active {
-  color: #fff;
-}
-
-/* On smaller screens, reduce width so it truncates earlier */
-@media (max-width: 767.98px) {
-  .breadcrumb-nav {
-    max-width: 160px;
-  }
-}
