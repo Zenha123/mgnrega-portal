@@ -164,6 +164,27 @@ canvas {
  
   box-shadow: 2px 0 6px rgba(0,0,0,0.1);
 }
+.sidebar-header {
+  background: #1565c0;
+  color: #fff;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+#main-content {
+  flex: 1;
+  transition: margin-left 0.3s ease;
+  margin-left: 240px;
+}
+
+
 
 #sidebar .sidebar-header {
   background: #1565c0;
@@ -228,9 +249,66 @@ canvas {
   border-radius: 0.75rem;
 }
 
+.list-group-item {
+  position: relative;
+}
+
+.list-group-item .badge {
+  font-size: 0.6rem;
+  padding: 4px 6px;
+}
 
 
+/* Set top navbar height */
+.navbar {
+  height: 64px;
+}
 
+/* Align sidebar header height */
+#sidebar .sidebar-header {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.navbar .container-fluid {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Breadcrumb styling for top navbar */
+.breadcrumb-nav {
+  max-width: 450px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.breadcrumb {
+  --bs-breadcrumb-divider: ">";
+}
+
+.breadcrumb-item {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.breadcrumb-item.active {
+  color: #fff;
+}
+
+/* On small screens — reduce max-width so it truncates earlier */
+@media (max-width: 767.98px) {
+  .breadcrumb-nav {
+    max-width: 160px;
+  }
+}
 
 /*/
 #sidebar {
