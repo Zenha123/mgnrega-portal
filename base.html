@@ -83,6 +83,24 @@
     font-size: 0.8rem;
   }
 }
+.logout-btn {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 576px) {
+  .logout-btn {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+  }
+
+  .navbar .d-flex.align-items-center.ms-auto {
+    justify-content: flex-end;
+  }
+}
+
   </style>
 </head>
 
@@ -112,13 +130,17 @@
     <a class="navbar-brand" href="#">MGNREGA</a>
 
     <div class="d-flex align-items-center ms-auto flex-wrap gap-2">
-      <a class="btn btn-outline-light position-relative" href="#">
-        <i class="bi bi-bell"></i>
-        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
-      </a>
-      <span class="text-white fw-semibold">👤 Zenha</span>
-      <button class="btn btn-outline-light logout-btn">Logout</button>
-    </div>
+  <a class="btn btn-outline-light position-relative" href="#">
+    <i class="bi bi-bell"></i>
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+  </a>
+  <div class="d-flex align-items-center gap-1 text-white">
+    <i class="bi bi-person-fill"></i>
+    <span class="fw-semibold">Zenha</span>
+  </div>
+  <button class="btn btn-outline-light logout-btn">Logout</button>
+</div>
+
   </div>
 </nav>
 
