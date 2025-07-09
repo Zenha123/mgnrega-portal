@@ -98,3 +98,32 @@ canvas {
 .bell-btn i {
   font-size: 1.2rem;
 }
+/* Consistent circular bell button */
+.bell-btn {
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bell-btn:hover {
+  background-color: #ffffff20;
+}
+
+/* Icon size inside bell button */
+.bell-btn i {
+  font-size: 1.2rem;
+}
+
+/* Adjust badge position on bell button */
+.bell-btn .badge {
+  font-size: 0.6rem;
+  padding: 4px 6px;
+}
