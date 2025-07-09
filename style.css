@@ -310,6 +310,23 @@ canvas {
   }
 }
 
+
+
+/* Breadcrumb truncate for smaller screens */
+#breadcrumb-trail {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 400px;
+}
+
+/* Adjust for very small screens (hide breadcrumb on mobile) */
+@media (max-width: 991px) {
+  #breadcrumb-trail {
+    display: none;
+  }
+}
+
 /*/
 #sidebar {
   position: fixed;
