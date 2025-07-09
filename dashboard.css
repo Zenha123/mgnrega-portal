@@ -1,14 +1,20 @@
-body {
+/* Remove unwanted horizontal scroll */
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
   background-color: #f0f2f5;
   font-family: 'Segoe UI', sans-serif;
 }
 
+/* Main content spacing */
 .main-content {
   margin-left: 0;
   transition: all 0.3s ease;
+  overflow-x: hidden;
 }
 
-/* Navbar spacing */
+/* Navbar adjustments */
 .navbar .navbar-brand {
   font-weight: 700;
   font-size: 1.3rem;
@@ -52,7 +58,35 @@ body {
   background-color: #0d6efd;
 }
 
-/* Adjustments for mobile screens */
+/* Cards and Tables */
+.card {
+  border: none;
+  border-radius: 0.75rem;
+}
+
+.card-body h6 {
+  font-size: 0.95rem;
+}
+
+.card-body h3 {
+  font-weight: 700;
+  font-size: 1.75rem;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* Chart canvas */
+canvas {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
   .navbar-brand {
     font-size: 1.1rem;
@@ -71,5 +105,19 @@ body {
 
   .offcanvas {
     width: 200px;
+  }
+
+  canvas {
+    padding: 0.5rem;
+  }
+
+  .card-body h3 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-body h3 {
+    font-size: 1.3rem;
   }
 }
