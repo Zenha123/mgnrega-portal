@@ -121,3 +121,46 @@ canvas {
     font-size: 1.3rem;
   }
 }
+/* Prevent any horizontal overflow */
+html, body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Remove container-fluid horizontal padding */
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: hidden;
+}
+
+/* Make tables fully responsive */
+.table {
+  width: 100%;
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
+/* Force all cards, charts and canvas to not exceed viewport width */
+.card, canvas {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Remove chart padding that causes overflow on small screens */
+canvas {
+  padding: 0;
+}
+
+/* Table cells force wrap content if long */
+.table th, .table td {
+  word-break: break-word;
+}
+
+/* Remove extra spacing in navbar */
+.navbar {
+  padding-left: 0;
+  padding-right: 0;
+}
