@@ -10,6 +10,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -58,14 +61,126 @@
 
   <!-- Page Content -->
   <div class="container-fluid p-4">
-    <h4 class="mb-4">Welcome to MGNREGA Dashboard</h4>
-    <!-- Sample content -->
-    <p>This is your dashboard content. Resize the window or open on mobile to test responsive sidebar and navbar alignment.</p>
-  </div>
 
+    <!-- Dashboard Cards -->
+    <div class="row g-4 mb-4">
+      <div class="col-lg-3 col-sm-6">
+        <div class="card text-white bg-primary">
+          <div class="card-body">
+            <h6>Total Requests</h6>
+            <h3>245</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="card text-white bg-success">
+          <div class="card-body">
+            <h6>Compliant (60:40)</h6>
+            <h3>198</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="card text-white bg-warning">
+          <div class="card-body">
+            <h6>Warning (55-59%)</h6>
+            <h3>31</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="card text-white bg-danger">
+          <div class="card-body">
+            <h6>Critical (&lt;50%)</h6>
+            <h3>16</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Compliance Table -->
+    <div class="card mb-4">
+      <div class="card-header fw-bold">Compliance Status (60:40)</div>
+      <div class="card-body p-0">
+        <table class="table table-bordered table-hover m-0">
+          <thead>
+            <tr>
+              <th>Location</th>
+              <th>Total Projects</th>
+              <th>Wage %</th>
+              <th>Material %</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-success">
+              <td>Panchayat A</td>
+              <td>32</td>
+              <td>62%</td>
+              <td>38%</td>
+              <td>Compliant</td>
+            </tr>
+            <tr class="table-warning">
+              <td>Panchayat B</td>
+              <td>18</td>
+              <td>56%</td>
+              <td>44%</td>
+              <td>Warning</td>
+            </tr>
+            <tr class="table-danger">
+              <td>Panchayat C</td>
+              <td>21</td>
+              <td>48%</td>
+              <td>52%</td>
+              <td>Critical</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <canvas id="ratioChart"></canvas>
+      </div>
+      <div class="col-lg-6">
+        <canvas id="statusChart"></canvas>
+      </div>
+    </div>
+
+  </div>
 </div>
 
-<!-- Bootstrap JS -->
+<!-- Bootstrap JS + Chart JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  // Wage:Material Ratio Doughnut Chart
+  new Chart(document.getElementById('ratioChart'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Wage', 'Material'],
+      datasets: [{ data: [60, 40], backgroundColor: ['#1976d2', '#ffc107'] }]
+    },
+    options: { responsive: true }
+  });
+
+  // Status Bar Chart
+  new Chart(document.getElementById('statusChart'), {
+    type: 'bar',
+    data: {
+      labels: ['Compliant', 'Warning', 'Alert', 'Critical'],
+      datasets: [{ 
+        label: 'Projects', 
+        data: [198, 31, 10, 16],
+        backgroundColor: ['#28a745', '#ffc107', '#fd7e14', '#dc3545']
+      }]
+    },
+    options: { responsive: true }
+  });
+</script>
+
 </body>
 </html>
