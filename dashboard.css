@@ -10,7 +10,7 @@ body {
   font-size: 1.4rem;
 }
 
-/* Badge sizes */
+/* Badge */
 .badge {
   font-size: 0.65rem;
   padding: 4px 6px;
@@ -62,12 +62,21 @@ canvas {
 }
 
 #sidebar-wrapper {
-  min-width: 250px;
-  max-width: 250px;
+  width: 250px;
   height: 100vh;
   overflow-y: auto;
   background-color: #212529;
   transition: all 0.3s ease;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1030;
+}
+
+#page-content-wrapper {
+  flex: 1;
+  transition: all 0.3s ease;
+  margin-left: 250px;
 }
 
 .sidebar-heading {
@@ -84,9 +93,13 @@ canvas {
   background-color: #0d6efd;
 }
 
-/* Collapsed sidebar */
+/* Sidebar Toggled Closed (Hidden) */
 #wrapper.toggled #sidebar-wrapper {
-  margin-left: -250px;
+  left: -250px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+  margin-left: 0;
 }
 
 /* Navbar adjustments */
@@ -129,18 +142,44 @@ canvas {
   min-width: 160px;
 }
 
-/* Responsive media queries */
-@media (max-width: 992px) {
+/* Responsive sidebar behavior */
+@media (max-width: 991.98px) {
   #sidebar-wrapper {
-    min-width: 220px;
-    max-width: 220px;
+    width: 220px;
+    left: -220px;
   }
+
   #wrapper.toggled #sidebar-wrapper {
-    margin-left: -220px;
+    left: 0;
+  }
+
+  #page-content-wrapper {
+    margin-left: 0;
+  }
+
+  #wrapper.toggled #page-content-wrapper {
+    margin-left: 220px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767.98px) {
+  #sidebar-wrapper {
+    width: 200px;
+    left: -200px;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    left: 0;
+  }
+
+  #page-content-wrapper {
+    margin-left: 0;
+  }
+
+  #wrapper.toggled #page-content-wrapper {
+    margin-left: 200px;
+  }
+
   .navbar-brand {
     font-size: 1.2rem;
   }
@@ -164,13 +203,15 @@ canvas {
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 575.98px) {
   .card-body h6 {
     font-size: 0.85rem;
   }
+
   .card-body h3 {
     font-size: 1.3rem;
   }
+
   .form-select {
     min-width: 120px;
   }
