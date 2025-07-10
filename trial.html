@@ -4,39 +4,26 @@
   <meta charset="UTF-8" />
   <title>Notification History</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="not.css" />
-  <script src="not.js" defer></script>
+  <link rel="stylesheet" href="trial.css" />
+  <script src="trial.js" defer></script>
 </head>
 <body>
 
 <div class="container">
-  <h2>Notification History</h2>
+  <h2>Notifications</h2>
 
   <div class="top-bar">
     <button onclick="markAllRead()">Mark All Read</button>
     <input type="text" id="searchInput" placeholder="Search Notifications..." onkeyup="searchNotifications()" />
   </div>
 
-  <div class="table-container">
-    <table id="notificationsTable">
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Message</th>
-          <th onclick="sortByDate()">Date &#x21C5;</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody id="notificationBody">
-        <!-- JS renders here -->
-      </tbody>
-    </table>
+  <div class="notification-list" id="notificationBody">
+    <!-- Notifications will render here -->
   </div>
 
   <button id="loadMoreBtn" onclick="loadMore()">Load More</button>
 </div>
 
-<!-- Config Form -->
 <div class="form-container">
   <h3>Set Alert Threshold</h3>
   <form id="configForm" onsubmit="return validateForm()">
@@ -45,6 +32,121 @@
     <button type="submit">Update</button>
   </form>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>

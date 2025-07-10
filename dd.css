@@ -1,0 +1,204 @@
+/* General page styles */
+body {
+  background-color: #f0f2f5;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+
+
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.dropdown-menu {
+  border-radius: 0.5rem;
+}
+
+.dropdown-header {
+  font-size: 0.9rem;
+}
+
+.badge {
+  font-size: 0.6rem;
+  padding: 4px 6px;
+}
+
+.breadcrumb {
+  margin-bottom: 0;
+  background: transparent;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: #fff;
+}
+
+/* Card styles */
+.card {
+  border: none;
+  border-radius: 0.75rem;
+}
+
+.card-body h6 {
+  font-size: 0.95rem;
+}
+
+.card-body h3 {
+  font-weight: 700;
+  font-size: 1.75rem;
+}
+
+/* Data table styles */
+.table th, .table td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.table thead {
+  background-color: #e9ecef;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Chart canvas responsiveness */
+canvas {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.75rem;
+}
+
+/* Notification button */
+.btn-outline-light {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 6px 0 0 0;
+  font-size: 1.2rem;
+}
+
+/* Location Filter */
+.form-select {
+  min-width: 180px;
+}
+
+/* Sidebar styling */
+#wrapper {
+  display: flex;
+  width: 100%;
+}
+
+#sidebar-wrapper {
+  min-width: 250px;
+  max-width: 250px;
+  height: 100vh;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+  background-color: #212529;
+}
+
+.sidebar-heading {
+  background-color: #1976d2;
+  color: #fff;
+}
+
+#sidebar-wrapper .list-group-item {
+  border: none;
+  transition: background 0.3s ease;
+}
+
+#sidebar-wrapper .list-group-item:hover {
+  background-color: #0d6efd;
+}
+
+#page-content-wrapper {
+  flex: 1;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Toggled sidebar (collapsed) */
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: -250px;
+}
+
+/* Navbar adjustments */
+.navbar-nav .nav-item {
+  margin-left: 10px;
+}
+
+.navbar-nav .btn-sm {
+  font-size: 0.85rem;
+}
+
+/* Card heading sizes override */
+.card-body h6 {
+  font-size: 0.9rem;
+}
+
+.card-body h3 {
+  font-size: 1.8rem;
+}
+
+/* Chart canvas spacing override */
+canvas {
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+
+/* Smooth transition for sidebar toggle */
+#wrapper,
+#sidebar-wrapper {
+  transition: all 0.3s ease;
+}
+.logout-btn {
+  padding: 10px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #ecd7f8;
+  color: #35dc94;
+  border-color: #f8d7da;
+}
+.logout-btn {
+  width: 70px;
+  text-align: center;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .breadcrumb {
+    font-size: 0.85rem;
+  }
+  .btn-outline-light {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  canvas {
+    padding: 0.5rem;
+  }
+  .form-select {
+    min-width: 130px;
+  }
+  .card-body h3 {
+    font-size: 1.4rem;
+  }
+
+  #sidebar-wrapper {
+    min-width: 200px;
+    max-width: 200px;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -200px;
+  }
+}
