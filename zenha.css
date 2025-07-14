@@ -277,6 +277,9 @@ input[type="text"] {
     margin-left: 240px;
     margin-top: 64px;
   }
+  .navbar .navbar-brand {
+    display: none !important;
+}
 }
 
 /* Breadcrumb trimming on extra small screens */
