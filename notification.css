@@ -301,7 +301,7 @@ input[type="text"] {
 
 
 /****************************************/
-@media (min-width: 768px) {
+/* @media (min-width: 768px) { */
   .custom-btn {
     padding: 10px 18px;
     font-size: 14px;
@@ -354,4 +354,4 @@ input[type="text"] {
   .form-container button:hover {
     background-color: #1565c0;
   }
-}
+
