@@ -69,13 +69,16 @@
     <h2>Notifications</h2>
 
     <div class="top-bar">
-      <button onclick="markAllRead()">Mark All Read</button>
-      <input type="text" id="searchInput" placeholder="Search Notifications..." onkeyup="searchNotifications()" />
+      <!-- <button onclick="markAllRead()">Mark All Read</button> -->
+       <button onclick="markAllRead()" class="custom-btn">Mark All Read</button>
+      <!-- <input type="text" id="searchInput" placeholder="Search Notifications..." onkeyup="searchNotifications()" /> -->
+       <input type="text" id="searchInput" placeholder="Search Notifications..." onkeyup="searchNotifications()" />
     </div>
 
     <div class="notification-list" id="notificationBody"></div>
 
-    <button id="loadMoreBtn" onclick="loadMore()">Load More</button>
+    <!-- <button id="loadMoreBtn" onclick="loadMore()">Load More</button> -->
+     <button id="loadMoreBtn"  onclick="loadMore()">Load More</button>
   </div>
 
   <div class="form-container">
@@ -83,7 +86,9 @@
     <form id="configForm" onsubmit="return validateForm()">
       <label for="threshold">Threshold Limit:</label>
       <input type="number" id="threshold" name="threshold" min="1" required />
-      <button type="submit">Update</button>
+      <!-- <button type="submit">Update</button> -->
+       <button type="submit" class="custom-btn">Update</button>
+
     </form>
   </div>
 

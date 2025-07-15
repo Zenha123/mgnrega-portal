@@ -258,6 +258,10 @@ input[type="text"] {
 }
 
 
+
+
+
+
 @media (min-width: 992px) {
   .navbar {
     left: 240px;
@@ -290,5 +294,64 @@ input[type="text"] {
     content: ' / ...';
     color: rgba(255, 255, 255, 0.85);
     margin-left: 4px;
+  }
+}
+
+
+
+
+/****************************************/
+@media (min-width: 768px) {
+  .custom-btn {
+    padding: 10px 18px;
+    font-size: 14px;
+    border-radius: 6px;
+    background-color: #1976d2;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .custom-btn:hover {
+    background-color: #1565c0;
+  }
+
+  #searchInput {
+    padding: 10px 16px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    flex-grow: 1;
+  }
+
+  #loadMoreBtn {
+    padding: 10px 18px;
+    font-size: 14px;
+    border-radius: 6px;
+    background-color: #1976d2;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  #loadMoreBtn:hover {
+    background-color: #1565c0;
+  }
+
+  .form-container button {
+    padding: 10px 18px;
+    font-size: 14px;
+    border-radius: 6px;
+    background-color: #1976d2;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .form-container button:hover {
+    background-color: #1565c0;
   }
 }
