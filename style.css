@@ -422,3 +422,15 @@ canvas {
   }
 }
 
+/* Chart container with fixed size */
+.chart-container {
+  max-width: 350px;
+  height: 350px;
+  margin: 0 auto;
+  position: relative;
+}
+
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+}

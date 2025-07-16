@@ -145,78 +145,6 @@
       </div>
 
       <!-- Compliance Table -->
-      <!-- <div class="card mb-4">
-        <div class="card-header fw-bold">Compliance Status</div>
-        <div class="card-body p-0">
-          <div style="overflow-x:auto;">
-          <table class="table table-bordered table-hover m-0">
-  <thead class="table-light">
-    <tr>
-      <th>Location</th>
-      <th>Total Projects</th>
-      <th>Wage %</th>
-      <th>Material %</th>
-      <th>Status</th>
-      <th>Time</th>   
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="table-success">
-      <td>Panchayat A</td>
-      <td>32</td>
-      <td>62%</td>
-      <td>38%</td>
-      <td>Compliant</td>
-      <td>10:30 AM</td>   
-    </tr>
-    <tr class="table-warning">
-      <td>Panchayat B</td>
-      <td>18</td>
-      <td>56%</td>
-      <td>44%</td>
-      <td>Warning</td>
-      <td>11:45 AM</td>
-    </tr>
-    <tr class="table-danger">
-      <td>Panchayat C</td>
-      <td>21</td>
-      <td>48%</td>
-      <td>52%</td>
-      <td>Critical</td>
-      <td>12:15 PM</td>
-    </tr>
-  </tbody>
-</table>
-
-          </div>
-        </div>
-      </div> -->
-
-      <!-- Charts -->
-      <!-- <div class="row mb-4">
-        <div class="col-lg-6">
-          <canvas id="ratioChart"></canvas>
-        </div>
-        <div class="col-lg-6">
-          <canvas id="statusChart"></canvas>
-        </div>
-      </div> -->
-      <div class="row mb-4">
-  <div class="col-lg-6 d-flex justify-content-center">
-    <div class="chart-container">
-      <canvas id="ratioChart"></canvas>
-    </div>
-  </div>
-  <div class="col-lg-6 d-flex justify-content-center">
-    <div class="chart-container">
-      <canvas id="statusChart"></canvas>
-    </div>
-  </div>
-</div>
-
-
-      
-          <!-- Compliance Table -->
       <div class="card mb-4">
         <div class="card-header fw-bold">Compliance Status</div>
         <div class="card-body p-0">
@@ -264,12 +192,15 @@
         </div>
       </div>
 
-
-
-
-
-
-
+      <!-- Charts -->
+      <div class="row mb-4">
+        <div class="col-lg-6">
+          <canvas id="ratioChart"></canvas>
+        </div>
+        <div class="col-lg-6">
+          <canvas id="statusChart"></canvas>
+        </div>
+      </div>
 
       <button class="btn btn-outline-primary">Export Data</button>
     </div>
@@ -299,38 +230,22 @@ document.addEventListener("click", function (e) {
   }
 });
 
-// Chart: Ratio (Doughnut)
-new Chart(document.getElementById('ratioChart'), {
-  type: 'doughnut',
-  data: {
-    labels: ['Wage', 'Material'],
-    datasets: [{
-      data: [60, 40],
-      backgroundColor: ['#1976d2', '#ffc107']
-    }]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false
-  }
-});
 
-// Chart: Status (Bar)
-new Chart(document.getElementById('statusChart'), {
-  type: 'bar',
-  data: {
-    labels: ['Compliant', 'Warning', 'Critical'],
-    datasets: [{
-      data: [198, 31, 16],
-      backgroundColor: ['#28a745', '#ffc107', '#dc3545']
-    }]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false
-  }
-});
+  new Chart(document.getElementById('ratioChart'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Wage', 'Material'],
+      datasets: [{ data: [60, 40], backgroundColor: ['#1976d2', '#ffc107'] }]
+    }
+  });
 
+  new Chart(document.getElementById('statusChart'), {
+    type: 'bar',
+    data: {
+      labels: ['Compliant', 'Warning', 'Critical'],
+      datasets: [{ data: [198, 31, 16], backgroundColor: ['#28a745', '#ffc107', '#dc3545'] }]
+    }
+  });
 </script>
 
 </body>
