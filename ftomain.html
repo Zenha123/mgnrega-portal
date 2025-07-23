@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MGNREGA FTO Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background: #fff9f5;
+      font-family: Arial, sans-serif;
+    }
+    h3 {
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .form-label {
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .clickable-row {
+      color: #0d6efd;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    table.dataTable thead th {
+      background-color: #0d6efd !important;
+      color: white;
+      font-size: 13px;
+      text-align: center;
+      vertical-align: middle;
+      border: 1px solid #ccc;
+    }
+    .table td, .table th {
+      border: 1px solid #ccc;
+      font-size: 13px;
+      text-align: center;
+    }
+    .table-striped > tbody > tr:nth-of-type(odd) {
+      background-color: #e7f1ff;
+    }
+    .table-hover tbody tr:hover {
+      background-color: #d3e5ff;
+    }
+
+    .breadcrumb {
+      margin-bottom: 0;
+      font-size: 12px;
+    }
+
+    .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+      color: white;
+    }
+
+    .breadcrumb .breadcrumb-item {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .breadcrumb .active {
+      color: #fff;
+      font-weight: 500;
+    }
+    .btn-outline-primary {
+  background-color: #0d6efd;
+  color: #fff;
+  border-color: #0d6efd;
+}
+
+.btn-outline-primary:hover {
+  background-color: #0b5ed7;
+  border-color: #0b5ed7;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar with Brand (Left) and Breadcrumb (Right) -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap">
+      
+      <!-- Left: Logo and Sidebar Toggle -->
+      <div class="d-flex align-items-center">
+        <button id="sidebarToggle" class="btn btn-outline-light me-2 d-lg-none">
+          <i class="bi bi-list"></i>
+        </button>
+        <a class="navbar-brand fw-bold" href="#">MGNREGA</a>
+      </div>
+
+      <!-- Right: Breadcrumbs -->
+      <div class="d-flex align-items-center mt-2 mt-lg-0">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-transparent mb-0">
+            <li class="breadcrumb-item">Kerala</li>
+            <li class="breadcrumb-item">Kannur</li>
+            <li class="breadcrumb-item">Thalassery</li>
+            <li class="breadcrumb-item active" aria-current="page">Panchayat A</li>
+          </ol>
+        </nav>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container-fluid mt-4">
+    <h3 class="mb-4">FTO Report – Maharashtra</h3>
+
+    <div class="mb-3">
+      <label for="searchFTO" class="form-label">Search FTO Number(s):</label>
+      <input type="text" id="searchFTO" class="form-control" placeholder="Comma‑separated (e.g., FTO123,FTO456)">
+    </div>
+    <a href="report.html" class="btn btn-outline-primary">
+  📊 View Financial Year Report
+</a>
+
+
+
+    <div class="table-responsive">
+      <table id="ftoTable" class="table table-striped table-bordered table-hover w-100">
+        <thead>
+          <tr>
+            <th>FTO No.</th>
+            <th>Last State</th>
+            <th>State Date</th>
+            <th>Amount</th>
+            <th>Txn Count</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+     
+</div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+
+  <script>
+    const ftoList = [
+      { fto: "FTO123456", state: "Sent to Bank", date: "2025-07-18", amount: 5000, count: 5 },
+      { fto: "FTO654321", state: "Processed", date: "2025-07-16", amount: 3000, count: 3 },
+      { fto: "FTO999888", state: "Pending", date: "2025-07-17", amount: 4000, count: 4 }
+    ];
+
+    $(document).ready(function () {
+      const table = $("#ftoTable").DataTable({
+        data: ftoList, info: false,  
+         
+        columns: [
+          { data: "fto", render: f => `<span class="clickable-row">${f}</span>` },
+          { data: "state" },
+          { data: "date" },
+          { data: "amount" },
+          { data: "count" }
+        ]
+      });
+   
+
+      $('#ftoTable tbody').on('click', '.clickable-row', function () {
+        const ftoNo = $(this).text();
+        window.location.href = `ftonum.html?fto=${encodeURIComponent(ftoNo)}`;
+      });
+
+      $('#searchFTO').on('keyup', function (e) {
+        if (e.key === 'Enter') {
+          const terms = this.value.split(',').map(s => s.trim().toUpperCase());
+          table.search(terms.join('|'), true, false).draw();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

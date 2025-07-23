@@ -345,82 +345,7 @@ canvas {
 }
 
 
-/*/
-#sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 240px;
-  height: 100%;
-  background: #1976d2;
-  overflow-y: auto;
-  transition: all 0.3s ease;
-  z-index: 9999;
-  box-shadow: 2px 0 6px rgba(0,0,0,0.1);
-}
 
-
-#sidebar .sidebar-header {
-  background: #1565c0;
-  color: #fff;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 1.1rem;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-
-#sidebar .list-group-item {
-  background: transparent;
-  color: #fff;
-  border: none;
-  padding: 14px 20px;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  transition: all 0.3s ease;
-}
-
-#sidebar .list-group-item:hover {
-  background: #1565c0;
-  border-left: 4px solid #ffc107;
-}
-
-#sidebar .list-group-item i {
-  background: #ffffff20;
-  padding: 8px;
-  border-radius: 50%;
-  font-size: 1rem;
-}
-
-@media (max-width: 991px) {
-  #sidebar {
-    left: -240px;
-  }
-
-  #sidebar.active {
-    left: 0;
-  }
-}
-
-#main-content {
-  flex: 1;
-  transition: margin-left 0.3s ease;
-  margin-left: 240px;
-}
-
-@media (max-width: 991px) {
-  #main-content {
-    margin-left: 0;
-  }
-}
 
 /* Chart container with fixed size */
 .chart-container {
@@ -433,4 +358,8 @@ canvas {
 canvas {
   width: 100% !important;
   height: 100% !important;
+}
+/********updated**********/
+.bg-orange {
+  background-color: #fd7e14 !important;  /* Bootstrap's orange */
 }
