@@ -1,49 +1,27 @@
 body.login-bg {
-  background-color: #f0f2f5;
+  background: linear-gradient(to right, #e3f2fd, #f5f5f5);
   margin: 0;
   padding: 0;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.left-panel {
-  background-color: #1976d2;
-  color: white;
-  flex: 1;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.login-card {
+  background-color: #ffffff;
+  border-radius: 1.25rem;
 }
 
-.left-panel h3 {
-  font-weight: 600;
+.input-group-text {
+  border-right: none;
 }
 
-.left-panel p {
-  font-size: 0.95rem;
-}
-
-.logo-img {
-  height: 70px;
-}
-
-.right-panel {
-  background: #ffffff;
-  flex: 1;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.login-card h3 {
-  font-weight: 600;
+.form-select {
+  border-left: none;
 }
 
 .btn-primary {
   background-color: #1976d2;
   border: none;
+  font-weight: 500;
 }
 
 .btn-primary:hover {
@@ -58,28 +36,10 @@ body.login-bg {
   font-size: 0.85rem;
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
-  .left-panel {
-    padding: 20px;
-  }
-
-  .right-panel {
-    padding: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .left-panel {
-    display: none;
-  }
-
-  .right-panel {
-    width: 100%;
-    min-height: auto;
-  }
-
+/* Mobile responsive tweaks */
+@media (max-width: 576px) {
   .login-card {
-    max-width: 90%;
+    padding: 1.5rem;
+    margin: 0 1rem;
   }
 }
