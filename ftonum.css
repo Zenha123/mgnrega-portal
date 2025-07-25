@@ -1,0 +1,36 @@
+
+    body {
+      background: #fff9f5;
+      font-family: Arial, sans-serif;
+    }
+    .table th {
+      background-color: #0d6efd;
+      color: white;
+      font-size: 13px;
+      text-align: center;
+    }
+    .table td {
+      border: 1px solid #ccc;
+      font-size: 13px;
+      text-align: center;
+    }
+    .header-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+    .rejected-reason {
+      font-size: 11px;
+      color: #0d6efd;
+      margin-top: 2px;
+    }
+    .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+      color: white;
+    }
+    .navbar-brand {
+      font-weight: bold;
+    }
+    .breadcrumb-item {
+      font-size: 12px;
+    }
